@@ -5,6 +5,14 @@ using namespace std;
 
 // definition of DelOddCopEven of Assignment 5 Part 1
 // (put at near top to facilitate printing and grading)
+/*
+ * Isaac Shepherd
+ * FUNCTION for Linked List
+ * void DelOddCopEven(Node*& headPtr)
+ *    Pre: None
+ *    Post: Linked list is rewritten with all odd valued data nodes
+ *          removed, and all even valued data nodes copied and placed behind cursor
+ */
 
 void DelOddCopEven(Node*& headPtr){
     Node* cursor = headPtr;
