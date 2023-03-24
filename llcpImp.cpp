@@ -6,19 +6,38 @@ using namespace std;
 // definition of DelOddCopEven of Assignment 5 Part 1
 // (put at near top to facilitate printing and grading)
 
-bool DelOddCopEven(Node*& headPtr){
+void DelOddCopEven(Node*& headPtr){
     Node* cursor = headPtr;
     Node* precursor = 0;
     while(cursor != 0){
-        precursor = cursor;
         //do algorithm
         if(cursor->data % 2 == 0){
             //insert copy of cursor node
+            if(precursor == 0){
+                InsertAsHead(headPtr, cursor->data);
+            }
+            else{
+                Node* NewNodePtr = new Node;
+                NewNodePtr->data = cursor->data;
+                NewNodePtr->link = cursor;
+                precursor->link = NewNodePtr;
+            }
+            precursor = cursor;
+            cursor = cursor->link;
         }
         else{
             //delete node
+            if(precursor == 0){
+                headPtr = cursor->link;
+                delete cursor;
+                cursor = headPtr;
+            }
+            else{
+                precursor->link = cursor->link;
+                delete cursor;
+                cursor = precursor->link;
+            }
         }
-        cursor = cursor->link;
     }
 }
 

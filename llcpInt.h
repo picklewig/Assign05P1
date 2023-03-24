@@ -22,6 +22,6 @@ double FindAverage(Node* headPtr);
 void   ListClear(Node*& headPtr, int noMsg = 0);
 
 // prototype of DelOddCopEven of Assignment 5 Part 1
-bool DelOddCopEven(Node*& headPtr);
+void DelOddCopEven(Node*& headPtr);
 
 #endif
